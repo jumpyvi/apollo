@@ -1,5 +1,5 @@
 # Apollo
-Apollo is a bootc image built on top of Arch Linux and GNOME. It is designed for gaming, software development and general day to day use for people who want a reliable, up to date and easy to use desktop operating system. It is based on the arch-bootc image from bootcrew, with a myriad of included packages and changes for desktop usability.
+Apollo is a bootc image built on top of Arch Linux and GNOME. It is designed for gaming, software development and general day to day use for people who want a reliable, up to date and easy to use desktop operating system. 
 
 ## Current status
 Apollo is in an experimental pre-alpha state. Use with caution; stability is not guaranteed at this time and basic things *will* be missing. You should be fully prepared to report bugs and in general, help is appreciated.
@@ -13,3 +13,7 @@ just generate-bootable-image # Generates a bootable image for you using bootc!
 ```
 
 Then you can run the `bootable.img` as your boot disk in your preferred hypervisor. GNOME Boxes is recommended and can be installed as a flatpak with minimal effort.
+
+## Credits
+- [bootcrew](github.com/bootcrew/) for providing an arch-bootc based image.
+- Arch Linux for providing a package base for Apollo.

@@ -28,11 +28,3 @@ systemctl enable ufw.service
 # Make sure that brew can be used with bash
 echo "source /etc/profile.d/brew.sh" | tee /etc/bash.bashrc
 
-# Set a plymouth theme
-tee /etc/plymouth/plymouthd.conf <<EOL
-[Daemon]
-Theme=spinner
-EOL
-
-# Rebuild initramfs after changing plymouth theme
-dracut --force "$(find /usr/lib/modules -maxdepth 1 -type d | grep -v -E "*.img" | tail -n 1)/initramfs.img"

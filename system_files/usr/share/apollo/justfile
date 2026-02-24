@@ -6,7 +6,7 @@ default:
 
 # Update Apollo, Flatpaks, brew packages and Distroboxes.
 update:
-    sudo uupd
+    sudo uupd --log-level info
 
 # Choose whether automatic updates are enabled or disabled
 toggle-automatic-updates:

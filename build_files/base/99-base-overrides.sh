@@ -26,5 +26,5 @@ systemctl disable bootc-fetch-apply-updates.timer
 systemctl enable ufw.service
 
 # Make sure that brew can be used with bash
-echo "source /etc/profile.d/brew.sh" | tee /etc/bash.bashrc
+echo "source /etc/profile.d/brew.sh" | tee -a /etc/bash.bashrc
 

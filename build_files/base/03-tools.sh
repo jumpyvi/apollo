@@ -20,7 +20,8 @@ pacman -S --noconfirm \
     htop \
     just \
     gum \
-    fzf
+    fzf \
+    zenity
 
 # Install some developer tools
 pacman -S --noconfirm \

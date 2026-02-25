@@ -28,6 +28,8 @@ systemctl enable ufw.service
 # Make sure that brew can be used with bash
 echo "source /etc/profile.d/brew.sh" | tee -a /etc/bash.bashrc
 
-# Use the Apollo logo for the plymouth theme
-cp /ctx/assets/usr/share/plymouth/themes/spinner/watermark.png /usr/share/plymouth/themes/spinner/watermark.png
+# Copy asset files from the assets repo
+rsync -rvK /ctx/assets/system_files/ /
+
+# Regenerate initramfs so plymouth has the Apollo logo
 dracut --force "$(find /usr/lib/modules -maxdepth 1 -type d | grep -v -E "*.img" | tail -n 1)/initramfs.img"

@@ -19,3 +19,4 @@ Then you can run the `bootable.img` as your boot disk in your preferred hypervis
 ## Credits
 - [bootcrew](https://github.com/bootcrew/) for providing an arch-bootc based image.
 - Arch Linux for providing a package base for Apollo.
+- Universal Blue for many important parts of the project, such as their homebrew image

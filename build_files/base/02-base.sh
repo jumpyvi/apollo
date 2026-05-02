@@ -66,7 +66,7 @@ Server = https://github.com/hecknt/arch-bootc-pkgs/releases/download/\$repo
 EOL
 
 pacman -Sy
-pacman -S --noconfirm bootc/uupd
+pacman -S --noconfirm bootc/uupd bootc/bootupd
 
 # Install ufw
 pacman -S --noconfirm ufw

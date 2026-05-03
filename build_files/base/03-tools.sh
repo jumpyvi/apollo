@@ -28,7 +28,8 @@ pacman -S --noconfirm \
     gcc \
     git \
     android-tools \
-    ydotool
+    ydotool \
+    python-pip
 
 # Install nerd font symbols out of the box \
 pacman -S --noconfirm \

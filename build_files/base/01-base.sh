@@ -21,6 +21,12 @@ rm -rfv /usr/lib/modules
 curl -o linux-6.19.14.arch1-1-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/l/linux/linux-6.19.14.arch1-1-x86_64.pkg.tar.zst
 pacman -U --noconfirm linux-6.19.14.arch1-1-x86_64.pkg.tar.zst
 
+echo "Install glibc-locales"
+pacman -Sy --noconfirm glibc-locales
+
+echo "Setting the default locale..."
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
 # Install drivers
 pacman -S --noconfirm \
     mesa \

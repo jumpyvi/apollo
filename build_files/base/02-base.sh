@@ -14,6 +14,13 @@ rsync -rvK /ctx/system_files/ /
 chmod +x /usr/bin/rechunker-group-fix
 systemctl enable rechunker-group-fix.service
 
+# Downgrade the kernel to 6.19.14 (see issue: https://github.com/bootc-dev/bootc/issues/2174)
+# TODO: remove this as soon as the issue is fixed
+pacman -Rsn --noconfirm linux
+rm -rfv /usr/lib/modules
+curl -o linux-6.19.14.arch1-1-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/l/linux/linux-6.19.14.arch1-1-x86_64.pkg.tar.zst
+pacman -U --noconfirm linux-6.19.14.arch1-1-x86_64.pkg.tar.zst
+
 # Install drivers
 pacman -S --noconfirm \
     mesa \

@@ -2,7 +2,6 @@
 
 set -ouex pipefail
 
-
 # Install fonts
 pacman -S --noconfirm \
     noto-fonts \

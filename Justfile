@@ -9,10 +9,19 @@ container_runtime := env("CONTAINER_RUNTIME", `command -v podman >/dev/null 2>&1
 [private]
 default:
     @{{ just }} --list
-    
-# Build the OS image from the containerfile
-build-containerfile $image_name=image_name $build_args=build_args:
-    sudo {{container_runtime}} build --build-arg IMAGE_NAME="${image_name}" ${build_args} -t "${image_name}:latest" .
+
+build: build-bootc
+
+build-bootc:
+    mkosi -B --debug --profile=bootc
+
+lint:
+    podman run --rm -it --entrypoint=bootc {{image_name}}:{{image_tag}} container lint
+
+load:
+    #!/usr/bin/env bash
+    set -x
+    podman load -i "$(find mkosi.output/* -maxdepth 0 -type d -printf "%T@ ,%p\n" -iname "_*" -print0 | sort -n | head -n1 | cut -d, -f2)" -q | cut -d: -f3 | xargs -I{} podman tag {} {{image_name}}:{{image_tag}}
 
 bootc *ARGS:
     sudo {{container_runtime}} run \
@@ -53,3 +62,7 @@ run-shell *ARGS:
         -v "{{base_dir}}:/data" \
         --security-opt label=type:unconfined_t \
         "{{image_name}}:{{image_tag}}" bash
+
+clean:
+    mkosi clean
+    sudo rm -r mkosi.tools/ mkosi.cache/

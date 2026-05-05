@@ -1,3 +1,6 @@
 [submodule "assets"]
 	path = assets
 	url = https://github.com/apollo-linux/assets
+[submodule "subprojects/arch-bootc-pkgs"]
+	path = subprojects/arch-bootc-pkgs
+	url = https://github.com/hecknt/arch-bootc-pkgs

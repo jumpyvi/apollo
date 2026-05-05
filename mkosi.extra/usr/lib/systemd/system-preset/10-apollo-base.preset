@@ -1,12 +1,9 @@
 disable systemd-firstboot.service
-disable bootc-fetch-apply-updates.timer
 
 enable gdm.service
 enable gnome-initial-setup.service
-enable rechunker-group-fix.service
 enable NetworkManager.service
 enable systemd-resolved.service
 enable bluetooth.service
 enable cups.service
-enable uupd.timer
 enable ufw.service

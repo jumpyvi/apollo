@@ -7,7 +7,3 @@ enable systemd-resolved.service
 enable bluetooth.service
 enable cups.service
 enable ufw.service
-
-enable brew-setup.service
-enable brew-update.timer
-enable brew-upgrade.timer

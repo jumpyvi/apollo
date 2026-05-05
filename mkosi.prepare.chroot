@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -ouex pipefail
-
-# Finish setting up brew
-curl --retry 3 -fsSLo "/tmp/brew-install" "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh" && \
-touch /.dockerenv && \
-env --ignore-environment "PATH=/usr/bin:/bin:/usr/sbin:/sbin" "HOME=/home/linuxbrew" "NONINTERACTIVE=1" /usr/bin/bash /tmp/brew-install && \
-tar --zstd -cvf "/usr/share/homebrew.tar.zst" "/home/linuxbrew/.linuxbrew"

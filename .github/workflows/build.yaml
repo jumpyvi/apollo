@@ -98,12 +98,16 @@ jobs:
         uses: extractions/setup-just@v4
 
       - name: Install mkosi
-        uses: systemd/mkosi@v26
+        uses: systemd/mkosi@main
 
       - name: Build image with mkosi
         id: build 
         run: 
           sudo mkosi -B -ff --debug --profile=bootc --cache-only=never
+
+      - name: Load the image into the local storage
+        run:
+          just load
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@184bdaa0721073962dff0199f1fb9940f07167d1 # v3

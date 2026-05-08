@@ -103,7 +103,7 @@ jobs:
       - name: Build image with mkosi
         id: build 
         run: 
-          sudo mkosi -B --profile bootc --debug -ff 
+          sudo mkosi -B --profile bootc --debug -ff --tools-tree-distribution=arch
 
       - name: Load the image into the local storage
         run:

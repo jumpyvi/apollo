@@ -98,12 +98,12 @@ jobs:
         uses: extractions/setup-just@v4
 
       - name: Install mkosi
-        uses: systemd/mkosi@v26
+        uses: systemd/mkosi@main
 
       - name: Build image with mkosi
         id: build 
         run: 
-          mkdir --parents mkosi.pkgcache/cache/pacman/pkg && sudo mkosi -B --profile bootc --debug -ff
+          sudo mkosi -B --profile bootc --debug -ff 
 
       - name: Load the image into the local storage
         run:

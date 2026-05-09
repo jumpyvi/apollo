@@ -6,27 +6,8 @@ Apollo is a Arch Linux-based bootc image designed to be a reliable, easy to use 
 ## Current status
 Apollo is still experimental and should be considered to be in a **pre-alpha** state. Use with caution; stability is not guaranteed at this time and basic things *will* be missing. You should be fully prepared to report bugs and in general, help is appreciated.
 
-## Installing.
+## Installing
 WIP, ISOs are being worked on.
-
-## Building
-Apollo is made with mkosi. You can build a bootc-compatible image with the following command:
-```bash
-just build-bootc
-```
-
-To load the built image into your container storage, you can run the following:
-```bash
-just load
-```
-
-To build a bootable image, follow the following commands:
-```bash
-sudo just load # the next command requires root access
-just generate-bootable-image
-```
-
-Then you can run the `bootable.img` as your boot disk in your preferred hypervisor. GNOME Boxes is recommended and can be installed as a flatpak with minimal effort.
 
 ## Credits
 - [bootcrew](https://github.com/bootcrew/) for providing an arch-bootc based image.

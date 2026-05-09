@@ -1,6 +1,27 @@
 # Contributing
 These are some rules and guidelines when contributing to Apollo, please follow them. 
 
+## Building
+Apollo is made with mkosi and bootc. You'll need mkosi, just, and preferably podman (docker should work too). A hypervisor is also recommended for testing images. 
+
+You can build a bootc-compatible oci archive with mkosi (an Arch-based environment is currently recommended) using the following command:
+```bash
+just build-bootc
+```
+
+To load the built oci archive into your *rootless* container storage, you can run the following:
+```bash
+just load
+```
+
+To build a bootable image, follow the following commands:
+```bash
+sudo just load # the next command requires rootful podman.
+sudo just generate-bootable-image
+```
+
+Then you can run the `bootable.img` as your boot disk in your preferred hypervisor, such as QEMU, Virt-Manager or GNOME Boxes.
+
 ## Commit style
 Apollo uses the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format, as seen in the following:
 

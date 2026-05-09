@@ -7,3 +7,9 @@
 [submodule "subprojects/ublue-brew"]
 	path = subprojects/ublue-brew
 	url = https://github.com/ublue-os/brew
+[submodule "subprojects/xdg-terminal-exec-nautilus"]
+	path = subprojects/xdg-terminal-exec-nautilus
+	url = https://github.com/zirconium-dev/xdg-terminal-exec-nautilus.git
+[submodule "subprojects/xdg-terminal-exec"]
+	path = subprojects/xdg-terminal-exec
+	url = https://gitlab.freedesktop.org/Vladimir-csp/xdg-terminal-exec.git

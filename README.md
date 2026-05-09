@@ -4,7 +4,7 @@ Apollo is a Arch Linux-based bootc image designed to be a reliable, easy to use 
 <img width="1920" height="1200" alt="A screenshot of a booted Apollo system running hyfetch and bootc status" src="https://github.com/user-attachments/assets/791db1cc-a5c8-4a68-9b43-2266acd92167" />
 
 ## Current status
-Apollo is in an experimental pre-alpha state. Use with caution; stability is not guaranteed at this time and basic things *will* be missing. You should be fully prepared to report bugs and in general, help is appreciated.
+Apollo is still experimental and should be considered to be in a **pre-alpha** state. Use with caution; stability is not guaranteed at this time and basic things *will* be missing. You should be fully prepared to report bugs and in general, help is appreciated.
 
 ## Installing.
 WIP, ISOs are being worked on.

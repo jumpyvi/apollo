@@ -27,3 +27,4 @@ jobs:
       image-name: "apollo"
       image-tag: "latest"
       image-profiles: ""
+    secrets: inherit

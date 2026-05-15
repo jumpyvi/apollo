@@ -8,9 +8,6 @@ git clone "https://gitlab.freedesktop.org/Vladimir-csp/xdg-terminal-exec.git" &&
 
 make prefix="/usr" install
 
-# Finish installing brew
-curl --retry 3 -fsSLo "/tmp/brew-install" "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh" && \
-touch /.dockerenv && \
-env --ignore-environment "PATH=/usr/bin:/bin:/usr/sbin:/sbin" "HOME=/home/linuxbrew" "NONINTERACTIVE=1" /usr/bin/bash /tmp/brew-install && \
-tar --zstd -cvf "/usr/share/homebrew.tar.zst" "/home/linuxbrew/.linuxbrew" && \
-rm /.dockerenv
+mkdir /tmp/brew
+crane export ghcr.io/ublue-os/brew:latest | tar --strip-components=2 -xvf - -C /tmp/brew system_files/usr/share/homebrew.tar.zst
+mv /tmp/brew/share/homebrew.tar.zst /usr/share/homebrew.tar.zst

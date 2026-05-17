@@ -23,8 +23,6 @@ on:
     secrets:
       SIGNING_SECRET:
         required: false
-      GITHUB_TOKEN:
-        required: true
 
 env:
   IMAGE_DESC: "Experimental arch-bootc POC image"

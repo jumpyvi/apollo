@@ -15,6 +15,11 @@ on:
         description: Additional profiles to use with mkosi (alongside bootc) - space seperated
         default: ""
         type: string 
+      rechunk: 
+        description: Whether this image should be rechunked with Chunkah
+        required: false
+        default: true
+        type: boolean
     secrets:
       SIGNING_SECRET:
         required: false
@@ -121,6 +126,11 @@ jobs:
       - name: Load the image into the local storage
         run:
           just load
+        
+      - name: Rechunk the final image
+        if: ${{ inputs.rechunk == true }}
+        run: |
+          just rechunk
 
       - name: Tag images
         run: |

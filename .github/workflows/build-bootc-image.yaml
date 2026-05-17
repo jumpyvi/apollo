@@ -152,7 +152,6 @@ jobs:
 
       - name: Tag images
         run: |
-          sudo just load
           for tag in $DOCKER_METADATA_OUTPUT_TAGS; do
               sudo -E podman tag apollo:latest $IMAGE_NAME:$tag;
           done

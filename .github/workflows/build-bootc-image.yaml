@@ -342,7 +342,7 @@ jobs:
           done
 
           # We want one per image instead
-          for digest_file in $(find /tmp/artifacts/*.txt); do
+          for digest_file in $(find /tmp/artifacts/*.txt | uniq); do
             TARGET_IMAGE="$(basename "${digest_file}")"
             TARGET_MANIFEST="${IMAGE_REGISTRY}/${TARGET_IMAGE}"
             while IFS= read -r LABEL; do

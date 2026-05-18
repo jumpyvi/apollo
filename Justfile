@@ -1,4 +1,5 @@
 image_name := env("BUILD_IMAGE_NAME", "apollo")
+image := env("IMAGE_FULL", "apollo:latest")
 image_tag := env("BUILD_IMAGE_TAG", "latest")
 base_dir := env("BUILD_BASE_DIR", ".")
 filesystem := env("BUILD_FILESYSTEM", "ext4")
@@ -28,7 +29,7 @@ lint:
 load:
     #!/usr/bin/env bash
     set -x
-    podman load -i "$(find mkosi.output/* -maxdepth 0 -type d -printf "%T@ ,%p\n" -iname "_*" -print0 | sort -n | head -n1 | cut -d, -f2)" -q | cut -d: -f3 | xargs -I{} podman tag {} {{image_name}}:{{image_tag}}
+    podman load -i "$(find mkosi.output/* -maxdepth 0 -type d -printf "%T@ ,%p\n" -iname "_*" -print0 | sort -n | head -n1 | cut -d, -f2)" -q | cut -d: -f3 | xargs -I{} podman tag {} {{image}}
 
 bootc *ARGS:
     #!/usr/bin/env bash

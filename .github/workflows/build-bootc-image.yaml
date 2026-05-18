@@ -344,7 +344,7 @@ jobs:
           # We want one per image instead
           for digest_file in $(find /tmp/artifacts/*.txt | sed 's/[-]$//' | uniq); do
             TARGET_IMAGE="$(basename "${digest_file}")"
-            TARGET_MANIFEST="${IMAGE_REGISTRY}/${TARGET_IMAGE}"
+            TARGET_MANIFEST="${IMAGE_REGISTRY}/${IMAGE_NAME}"
             while IFS= read -r LABEL; do
               podman manifest annotate --index --annotation "${LABEL}" "${TARGET_MANIFEST}"
             done <<< "${LABELS}"

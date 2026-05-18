@@ -30,7 +30,7 @@ SUPPORT_URL="https://github.com/apollo-linux/apollo/issues"
 ID="apollo"
 ID_LIKE="arch"
 BUILD_ID="rolling"
-LOGO=apollo_logo
+LOGO=apollo-logo
 
 # Set default hostname
 echo "${HOSTNAME}" > /etc/hostname

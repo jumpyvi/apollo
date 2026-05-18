@@ -24,7 +24,7 @@ build-bootc $profiles=profiles:
     mkosi -B --debug --profile=bootc ${args}
 
 lint:
-    podman run --rm -it --entrypoint=bootc {{image_name}}:{{image_tag}} container lint
+    podman run --rm -it --entrypoint=bootc {{image}} container lint
 
 load:
     #!/usr/bin/env bash
@@ -48,7 +48,7 @@ bootc *ARGS:
         "${BOOTC_INSTALL_OPTIONS[@]}" \
         -v /dev:/dev \
         -v "${BUILD_BASE_DIR:-.}:/data" \
-        {{image_name}}:{{image_tag}} bootc {{ ARGS }}
+        {{image}} bootc {{ ARGS }}
 
 # Generate a bootable .img file with Apollo installed
 generate-bootable-image $base_dir=base_dir $filesystem=filesystem:
@@ -75,12 +75,12 @@ run-shell *ARGS:
         -e RUST_LOG=debug \
         -v "{{base_dir}}:/data" \
         --security-opt label=type:unconfined_t \
-        "{{image_name}}:{{image_tag}}" bash
+        "{{image}}" bash
 
 # Rechunk the final Apollo image with Chunkah
 rechunk: 
     #!/bin/bash
-    IMG="{{image_name}}:{{image_tag}}"
+    IMG="{{image}}"
     export CHUNKAH_CONFIG_STR="$(podman inspect $IMG)"
     podman run --rm --mount=type=image,src=$IMG,dest=/chunkah \
         -e CHUNKAH_CONFIG_STR quay.io/coreos/chunkah build \

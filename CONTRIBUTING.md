@@ -43,3 +43,6 @@ When choosing the scope to use, it's ultimately your discretion. As a general ru
 
 ## Code of Conduct
 Please make sure that your contribution, including communication around it, follows the [Apollo Code of Conduct](https://github.com/apollo-linux/.github/blob/main/CODE_OF_CONDUCT.md). This is currently the Contributor Covenant 3.0. 
+
+# AI use
+Please see the [Apollo Generative AI policy](https://docs.getapollo.dev/docs/contributing/gen-ai/). TLDR: AI contributions are unwelcome here.

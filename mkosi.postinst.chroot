@@ -27,7 +27,7 @@ echo "source /etc/profile.d/brew.sh" | tee -a /etc/bash.bashrc
 # Branding variables
 IMAGE_PRETTY_NAME="Apollo"
 HOSTNAME="apollo"
-HOME_URL="https://github.com/apollo-linux/apollo"
+HOME_URL="https://getapollo.dev"
 SUPPORT_URL="https://github.com/apollo-linux/apollo/issues"
 ID="apollo"
 ID_LIKE="arch"

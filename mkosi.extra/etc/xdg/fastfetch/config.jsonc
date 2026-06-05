@@ -4,9 +4,7 @@
     "type": "auto",
     "source": "/usr/share/apollo/apollo.fastfetch",
     "color": {
-      "1": "#e075ff",
-      "2": "#ffde75",
-      "3": "#56e1ff"
+      "1": "#A310F8"
     },
     "width": null,
     "height": null,
@@ -32,8 +30,8 @@
     "hideCursor": false,
     "separator": ": ",
     "color": {
-      "keys": "",
-      "title": "",
+      "keys": "magenta",
+      "title": "magenta",
       "output": "",
       "separator": ""
     },
@@ -252,7 +250,7 @@
       "showReadOnly": true,
       "showUnknown": false,
       "folders": "",
-      "hideFolders": "/efi:/boot:/boot/*",
+      "hideFolders": "/efi:/boot:/boot/*:/",
       "hideFS": "",
       "useAvailable": false,
       "percent": {

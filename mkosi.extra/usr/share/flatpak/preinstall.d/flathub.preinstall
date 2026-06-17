@@ -1,0 +1,35 @@
+[Flatpak Preinstall org.gnome.Epiphany]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.TextEditor]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall io.github.kolunmi.Bazaar]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Firmware]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.mattjakeman.ExtensionManager]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.FileRoller]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Loupe]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall org.gnome.Papers]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall page.tesk.Refine]
+Branch=stable
+IsRuntime=false

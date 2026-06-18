@@ -22,33 +22,8 @@ setcap -r /usr/bin/newuidmap
 setcap -r /usr/bin/newgidmap
 chmod u+s /usr/bin/newuidmap /usr/bin/newgidmap
 
-echo "source /etc/profile.d/brew.sh" | tee -a /etc/bash.bashrc
-
-# Branding variables
-IMAGE_PRETTY_NAME="Apollo"
-HOSTNAME="apollo"
-HOME_URL="https://getapollo.dev"
-SUPPORT_URL="https://github.com/apollo-linux/apollo/issues"
-ID="apollo"
-ID_LIKE="arch"
-BUILD_ID="rolling"
-LOGO=apollo-logo
-
-# Set default hostname
-echo "${HOSTNAME}" > /etc/hostname
-
-# Overwrite os-release
-cat > /usr/lib/os-release <<EOF
-NAME="${IMAGE_PRETTY_NAME}"
-ID="${ID}"
-ID_LIKE="${ID_LIKE}"
-BUILD_ID="${BUILD_ID}"
-PRETTY_NAME="${IMAGE_PRETTY_NAME}"
-HOME_URL="${HOME_URL}"
-SUPPORT_URL="${SUPPORT_URL}"
-LOGO="${LOGO}"
-DEFAULT_HOSTNAME="${HOSTNAME}"
-EOF
+# Set ptyxis as the default terminal
+echo "org.gnome.Ptyxis.desktop:new-window" | tee -a /usr/share/xdg-terminal-exec/xdg-terminals.list
 
 # Remove packages that are only used for building
 pacman -Rs --noconfirm \

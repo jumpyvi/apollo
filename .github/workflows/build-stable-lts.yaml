@@ -1,9 +1,6 @@
 ---
 name: Build LTS images
 on:
-  pull_request:
-    branches:
-      - main
   schedule:
     # TODO: long-term, this should be weekly builds. Ideally closer to either beta or GA.
     - cron: "05 10 * * *" # 10:05am UTC everyday

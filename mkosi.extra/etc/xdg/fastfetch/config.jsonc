@@ -149,7 +149,7 @@
       "type": "packages",
       "keyIcon": "󰏖",
       "disabled": [
-        "apk"
+        "pacman"
       ],
       "combined": false
     },

@@ -2,8 +2,6 @@
 
 set -uexo pipefail
 
-echo "source /etc/profile.d/brew.sh" | tee -a /etc/bash.bashrc
-
 # Branding variables
 IMAGE_PRETTY_NAME="Apollo"
 HOSTNAME="apollo"
@@ -28,4 +26,5 @@ HOME_URL="${HOME_URL}"
 SUPPORT_URL="${SUPPORT_URL}"
 LOGO="${LOGO}"
 DEFAULT_HOSTNAME="${HOSTNAME}"
+IMAGE_VERSION="${IMAGE_VERSION}"
 EOF

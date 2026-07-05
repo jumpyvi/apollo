@@ -1,5 +1,8 @@
 # Apollo
-<img width="1920" height="1200" alt="A screenshot of a booted Apollo system running hyfetch and bootc status" src="https://github.com/user-attachments/assets/791db1cc-a5c8-4a68-9b43-2266acd92167" />
+<picture>
+    <source srcset="docs/landing-screenshot-dark.png" media="(prefers-color-scheme: dark)">
+    <img id="landing-screenshot" src="docs/landing-screenshot.png" alt="An Apollo desktop with the Calendar, Weather and Music apps open">
+</picture>
 
 Apollo is an up to date, easy to use and privacy respecting operating system for your computer, based on Arch Linux and bootc. Apollo is designed to serve a wide-variety of use cases, including everyday use, containerised development and gaming.
 
